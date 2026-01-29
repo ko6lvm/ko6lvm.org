@@ -118,11 +118,11 @@
 
     <section id="landing">
         <div class="inner-text-content">
-            <h1>Ryan Kim</h1>
-            <p>KO6LVM - Grid CM87xi</p>
-            <p style="margin: 15px 0px 7.5px 0px;">Developer</p>
-            <p>Aviation Enthusiast</p>
-            <p>US Amateur Radio Operator</p>
+            <h1 id="mainName">Ryan Kim</h1>
+            <p id="mainDesc">KO6LVM - Grid CM87xi</p>
+            <p id="devText" style="margin: 15px 0px 7.5px 0px;">Developer</p>
+            <p id="avEnt">Aviation Enthusiast</p>
+            <p id="usHam">US Amateur Radio Operator</p>
             <br><p style="font-size: 15px;">Scroll down! ↓</p>
         </div>
     </section>
@@ -172,6 +172,21 @@
     </section>
 
     <script>
+        const typeText = (element, interval) => {
+            const text = element.innerHTML;
+            element.textContent = "";
+            let i = 0;
+
+            const runner = () => {
+                if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(runner, interval);
+                }
+            };
+            runner();
+        };
+
         const sections = document.querySelectorAll('section');
         const dots = document.querySelectorAll('.nav-dot');
 
@@ -186,6 +201,11 @@
         }, { threshold: 0.6 });
 
         sections.forEach(section => observer.observe(section));
+        typeText(document.getElementById("mainName"), 100);
+        typeText(document.getElementById("mainDesc"), 45);
+        typeText(document.getElementById("devText"), 50);
+        typeText(document.getElementById("avEnt"), 50);
+        typeText(document.getElementById("usHam"), 40);
     </script>
 </body>
 </html>
