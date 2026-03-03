@@ -18,11 +18,13 @@
         <style>
             * {
                 box-sizing: border-box;
+                scroll-behavior: smooth;
             }
 
             body {
                 margin: 0px;
                 padding: 0px;
+                background: #34495e;
             }
             
             p {
@@ -136,8 +138,6 @@
 
                 padding-top: 30px;
                 padding-bottom: 30px;
-
-                background: #34495e;
                 
                 display: flex;
                 align-items: center;
@@ -156,10 +156,7 @@
 
                 font-family: "Roboto", sans-serif;
 
-                padding-left: 35px;
-                padding-top: 30px;
-                padding-bottom: 50px;
-                padding-right: 35px;
+                padding: 35px;
             }
 
             .qsl-info {
@@ -200,6 +197,7 @@
             .quote-bar {
                 border-left: 5px solid white;
                 padding-left: 10px;
+                margin-top: 10px;
                 margin-bottom: 10px;
             }
 
@@ -211,6 +209,47 @@
                 padding: 15px;
                 display: flex;
                 flex-direction: column;
+            }
+            
+            .contact-me-master-container {
+                height: auto;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-family: "Roboto", sans-serif;
+                color: white;
+            }
+
+            .contact-me-highlight-container {
+                height: auto;
+                min-width: 40%;
+                background-color: #2F4254;
+                padding: 35px;
+                margin-bottom: 30px;
+            }
+
+            .left-indent {
+                padding-left: 25px;
+            }
+
+            .preferred-tag-container {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .preferred-tag-container p {
+                margin: 0;
+                line-height: 1;
+            }
+            
+            .preferred-tag {
+                background: red;
+                border-radius: 5%;
+                padding: 5px;
+                width: fit-content;
             }
 
             @media (max-width: 600px) {
@@ -232,6 +271,10 @@
                 .qsl-info {
                     flex-direction: column;
                 }
+
+                .contact-me-highlight-container {
+                    min-width: 70%;
+                }
             }
         </style>
     </head>
@@ -245,7 +288,7 @@
                 <i>Amateur Radio Operator</i>
             </div>
             <div class="button-container">
-                <a href="mailto:ryan@KO6LVM.org" class="glow-button">Contact Me</a>
+                <a href="#contact" class="glow-button">Contact Me</a>
                 <a href="https://qrz.com/db/KO6LVM" class="glow-button">QRZ</a>
                 <a href="https://app.worldradioleague.com/profile/KO6LVM" class="glow-button">WRL</a>
             </div>
@@ -256,7 +299,7 @@
         <div class="qsl-contact-card-container">
             <div class="qsl-card">
                 <p class="quote-bar">QSL INFORMATION</p>
-                <h1>Had a Contact?</h1>
+                <h1>Had a HAM Contact?</h1>
                 <div class="qsl-info">
                     <div class="qsl-indiv">
                         <h2>Digital</h2>
@@ -268,6 +311,22 @@
                     </div>
                 </div>
                 <p>Contacts are processed at the first of every month.</p>
+            </div>
+        </div>
+        <div class="contact-me-master-container" id="contact">
+            <div class="contact-me-highlight-container">
+                <p class="quote-bar">CONTACT INSTRUCTIONS</p>
+                <h1 style="margin-bottom: 20px;">Contact Me</h1>
+                <div class="preferred-tag-container">
+                    <p class="quote-bar">Email</p>
+                    <div class="generic-wrapper-no-class" style="margin-left: 25px; padding: 5px 0px 5px 0px;">
+                        <p class="preferred-tag">PREFERRED</p>
+                    </div>
+                </div>
+                <p class="left-indent">General: ryan@KO6LVM.org</p>
+                <p class="left-indent">Edu-Related: edu@KO6LVM.org</p>
+                <p class="quote-bar">Discord</p>
+                <p class="left-indent">@groundpoint8</p>
             </div>
         </div>
         <div class="footer">
