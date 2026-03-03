@@ -1,211 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Ryan Kim (KO6LVM)"/>
-    <meta property="og:description" content="Hi! I'm Ryan Kim, KO6LVM."/>
-    <meta property="og:url" content="https://ko6lvm.org"/>
-    <meta name="theme-color" content="#4564ff">
-    <title>Ryan Kim (KO6LVM)</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+<html>
+    <head>
+        <title>Ryan Kim KO6LVM</title>
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta property="og:title" content="Ryan Kim KO6LVM"/>
+        <meta property="og:description" content="Hi! I'm Ryan Kim, KO6LVM."/>
+        <meta property="og:url" content="https://ko6lvm.org"/>
+        <meta name="theme-color" content="#4564ff">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        * { box-sizing: border-box; }
+        <style>
+            * {
+                box-sizing: border-box;
+            }
 
-        html { font-family: "Roboto Mono", monospace; }
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            p {
+                margin: 0;
+            }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            background-color: #1a1a1a;
-        }
+            h1 {
+                margin: 0;
+            }
 
-        .nav-pill {
-            position: fixed;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            padding: 12px 8px;
-            border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 100;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+            h2 {
+                margin: 0;
+            }
 
-        .nav-dot {
-            width: 8px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+            .landing-page-top {
+                height: 100vh;
+                width: 100%;
+                
+                background-image:
+                    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url("SFODowntown.jpg");
+                
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                
+                margin: 0px;
+                
+                display: flex;
+                box-sizing: border-box;
+                flex-direction: column;
+            }
 
-        .nav-dot.active {
-            background: #ffffff; 
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-            transform: scale(1.2);
-        }
+            .landing-page-main-text {
+                font-family: "Roboto";
+                font-weight: 800;
+                font-style: italic;
+                font-size: 8rem;
 
-        section {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            scroll-snap-align: start;
-            align-items: left; 
-            font-size: 3rem;
-            color: white;
-            position: relative;
-        }
+                color: white;
+                text-transform: uppercase;
 
-        .inner-text-content {
-            margin: 50px 0px 15px 50px;
-        }
+                padding-top: 20px;
+                padding-left: 50px;
+            }
 
-        section:nth-of-type(1) { background-color: #1a1a1a; }
-        section:nth-of-type(2) { background-color: #2e2e2e; }
-        section:nth-of-type(3) { background-color: #3f3f3f; }
-        section:nth-of-type(4) { background-color: #4b4b4b; }
+            .landing-page-subheading-text {
+                font-family: "Roboto";
+                font-weight: 500;
+                font-size: 2rem;
 
-        h1 { margin: 0; transition: transform 0.5s; font-size: 50px; }
-        p { font-size: 1.2rem; opacity: 0.8; margin: 7.5px 0px; }
+                color: white;
 
-        body::-webkit-scrollbar { display: none; }
-        body { -ms-overflow-style: none; scrollbar-width: none; }
+                padding-left: 50px;
 
-        .contact-row {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-family: 'Courier New', monospace;
-            font-size: 18px;
-            margin: 0; 
-        }
+                display: flex;
+                flex-direction: column;
+            }
 
-        .contact-row p {
-            margin: 7.5px 0px; 
-        }
+            .landing-page-footer-text {
+                margin-top: auto;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                align-self: flex-end;
 
-        .icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 15px;
-            filter: brightness(0) invert(1);
-        }
-    </style>
-</head>
-<body>
+                color: white;
+                font-family: "Roboto", sans-serif;
+                font-size: 1rem;
+            }
 
-    <nav class="nav-pill">
-        <a class="nav-dot" onclick="document.getElementById('landing').scrollIntoView()" title="Home"></a>
-        <a class="nav-dot" onclick="document.getElementById('skills').scrollIntoView()" title="About"></a>
-        <a class="nav-dot" onclick="document.getElementById('experience').scrollIntoView()" title="Work"></a>
-        <a class="nav-dot" onclick="document.getElementById('contact').scrollIntoView()" title="Contact"></a>
-    </nav>
+            .landing-page-footer-text p {
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 2px solid white;
+                border-radius: 10px;
+                padding: 5px;
+            }
+            
+            .button-container {
+                margin-top: 20px;
+                margin-left: 50px;
 
-    <section id="landing">
-        <div class="inner-text-content">
-            <h1 id="mainName">Ryan Kim</h1>
-            <p id="mainDesc">KO6LVM - Grid CM87xi</p>
-            <p id="devText" style="margin: 15px 0px 7.5px 0px;">Developer</p>
-            <p id="avEnt">Aviation Enthusiast</p>
-            <p id="usHam">US Amateur Radio Operator</p>
-            <br><p style="font-size: 15px;">Scroll down! ↓</p>
-        </div>
-    </section>
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+            }
 
-    <section id="skills">
-        <div class="inner-text-content">
-            <h1>Interests</h1>
-            <p>HAM Radio</p>
-            <p style="font-size: 12px;">See <a href="https://HAM.KO6LVM.org" style="color: lightblue; text-decoration: none;">HAM.KO6LVM.org</a></p>
-            <p>Computer Science</p>
-            <p style="font-size: 12px;">Find me on <a href="https://www.codewars.com/users/groundpoint8" style="color: lightblue; text-decoration: none;">Codewars</a></p>
-            <p>VATSIM ATC</p>
-            <p style="font-size: 12px;">vZOA <a href="https://oakartcc.org/controller/1929124" style="color: lightblue; text-decoration: none;">Profile</a></p>
-        </div>
-    </section>
+            .glow-button {
+                display: inline-block;
+                padding: 12px 24px;
+                border: 2px solid white;
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white;
+                text-decoration: none;
+                font-family: "Roboto", sans-serif;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
 
-    <section id="experience">
-        <div class="inner-text-content">
-            <h1>Experience</h1>
-            <p style="font-size: 12px;">Not too much yet since I'm in school, but some include:</p>
-            <p>FCC Certified Amateur Radio Operator</p>
-            <p style="font-size: 12px;">Callsign <i>KO6LVM</i>, Grid Square CM87xi</p>
-            <p>Python</p>
-            <p style="font-size: 12px;">Some Backend (Flask/Quart), Codewars, and <i>Pygame</i></p>
-            <p>Java</p>
-            <p style="font-size: 12px;">A <i>bit</i>. Looking to learn more.</p>
-            <p>Frontend (HTML/CSS/JS)</p>
-            <p style="font-size: 12px;">You're looking at it right now!</p>
-        </div>
-    </section>
+            .glow-button:hover {
+                background-color: white;
+                color: black;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            }
+            
+            .qsl-contact-card-container {
+                height: auto;
+                width: 100%;
 
-    <section id="contact">
-        <div class="inner-text-content">
-            <h1>Contact Me</h1>
-            <p style="margin: 15px 0px 7.5px 0px;">KO6LVM.org</p>
-            <p>HAMs: HAM.KO6LVM.org</p>
-            <p style="font-size: 12px;">QSLs: eQSL, LoTW, QRZ, and WRL</p>
-            <div class="contact-row">
-                <img src="discord.png" class="icon" alt="Discord">
-                <p>groundpoint8</p>
-            </div>
-            <div class="contact-row">
-                <img src="email.png" class="icon" alt="Email">
-                <p>ryan@KO6LVM.org</p>
-            </div>
-        </div>
-    </section>
+                padding-top: 30px;
+                padding-bottom: 30px;
 
-    <script>
-        const typeText = (element, interval) => {
-            const text = element.innerHTML;
-            element.textContent = "";
-            let i = 0;
+                background: #34495e;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-            const runner = () => {
-                if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(runner, interval);
+            .qsl-card {
+                height: auto;
+                width: auto;
+                background: #2F4254;
+                border-radius: 50px;
+
+                color: white;
+
+                display: flex;
+                flex-direction: column;
+
+                font-family: "Roboto", sans-serif;
+
+                padding-left: 35px;
+                padding-top: 30px;
+                padding-bottom: 50px;
+                padding-right: 35px;
+            }
+
+            .qsl-info {
+                height: auto;
+                width: auto;
+                
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+
+            }
+
+            .qsl-indiv {
+                width: auto;
+                height: 100px;
+
+                margin-top: 10px;
+                padding: 20px;
+
+                border: 2px solid black;
+                border-radius: 30px;
+
+                transition: all 0.3s ease;
+
+                background: #283847;
+            }
+
+            .qsl-indiv p {
+                margin-top: 5px;
+            }
+
+            .qsl-indiv:hover {
+                border: 2px solid white;
+                background: #34495e;
+            }
+
+            @media (max-width: 600px) {
+                .landing-page-main-text {
+                    font-size: 6rem;
+                    padding-left: 20px;
+                    padding-top: 10px;
                 }
-            };
-            runner();
-        };
 
-        const sections = document.querySelectorAll('section');
-        const dots = document.querySelectorAll('.nav-dot');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    const index = Array.from(sections).indexOf(entry.target);
-                    if (dots[index]) dots[index].classList.add('active');
+                .landing-page-subheading-text {
+                    font-size: 1rem;
+                    padding-left: 20px;
                 }
-            });
-        }, { threshold: 0.6 });
 
-        sections.forEach(section => observer.observe(section));
-        typeText(document.getElementById("mainName"), 100);
-        typeText(document.getElementById("mainDesc"), 45);
-        typeText(document.getElementById("devText"), 50);
-        typeText(document.getElementById("avEnt"), 50);
-        typeText(document.getElementById("usHam"), 40);
-    </script>
-</body>
+                .button-container {
+                    margin-left: 20px;
+                }
+
+                .qsl-info {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="landing-page-top">
+            <div class="landing-page-main-text">
+                <p>KO6LVM</p>
+            </div>
+            <div class="landing-page-subheading-text">
+                <i>Jeongwoo "Ryan" Kim</i>
+                <i>Amateur Radio Operator</i>
+            </div>
+            <div class="button-container">
+                <a href="mailto:ryan@KO6LVM.org" class="glow-button">Contact Me</a>
+                <a href="https://qrz.com/db/KO6LVM" class="glow-button">QRZ</a>
+                <a href="https://app.worldradioleague.com/profile/KO6LVM" class="glow-button">WRL</a>
+            </div>
+            <div class="landing-page-footer-text">
+                <p>San Francisco Skyline, 2024 (Wikimedia)</p>
+            </div>
+        </div>
+        <div class="qsl-contact-card-container">
+            <div class="qsl-card">
+                <h2>QSL INFORMATION</h1>
+                <div class="qsl-info">
+                    <div class="qsl-indiv">
+                        <h2>Digital</h2>
+                        <p>QRZ.com, World Radio League</p>
+                    </div>
+                    <div class="qsl-indiv">
+                        <h2>Physical</h2>
+                        <p>Physical QSL cards are not accepted at this time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
