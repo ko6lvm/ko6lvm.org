@@ -15,6 +15,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
         <style>
             * {
                 box-sizing: border-box;
@@ -172,13 +174,12 @@
 
             .qsl-indiv {
                 width: auto;
-                height: 100px;
+                height: auto;
 
                 margin-top: 10px;
                 padding: 20px;
 
                 border: 2px solid black;
-                border-radius: 15px;
 
                 transition: all 0.3s ease;
 
@@ -228,6 +229,8 @@
                 background-color: #2F4254;
                 padding: 35px;
                 margin-bottom: 30px;
+
+                margin: 20px;
             }
 
             .left-indent {
@@ -247,9 +250,59 @@
             
             .preferred-tag {
                 background: red;
-                border-radius: 5%;
                 padding: 5px;
                 width: fit-content;
+            }
+
+            .radios-master-container {
+                height: auto;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-family: "Roboto", sans-serif;
+                color: white;
+            }
+
+            .radios-inner-container {
+                height: auto;
+                width: auto;
+                min-width: 40vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+                background-color: #283847;
+
+                padding: 35px;
+                margin: 20px;
+            }
+
+            .each-radio-container {
+                background-color: #2F4254;
+                min-width: 35vw;
+                width: auto;
+
+                padding: 20px;
+                margin: 10px;
+
+                transition: all 0.3s ease;
+
+                border: 2px solid black;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .inner-margin {
+                margin: 10px 0;
+            }
+
+            .each-radio-container:hover {
+                border: 2px solid white;
             }
 
             @media (max-width: 600px) {
@@ -275,22 +328,28 @@
                 .contact-me-highlight-container {
                     min-width: 70%;
                 }
+
+                .each-radio-container {
+                    flex-direction: column;
+                }
             }
         </style>
+
+        <!-- MAIN BG 34495e  SECOND HG 2F4254  THIRD HG 283847 -->
     </head>
     <body>
         <div class="landing-page-top">
             <div class="landing-page-main-text">
-                <p>KO6LVM</p>
+                <p class="animate__animated animate__fadeInDown">KO6LVM</p>
             </div>
             <div class="landing-page-subheading-text">
-                <i>Jeongwoo "Ryan" Kim</i>
-                <i>Amateur Radio Operator</i>
+                <i class="animate__animated animate__fadeInUp">Jeongwoo "Ryan" Kim</i>
+                <i class="animate__animated animate__fadeInUp">Amateur Radio Operator</i>
             </div>
             <div class="button-container">
-                <a href="#contact" class="glow-button">Contact Me</a>
-                <a href="https://qrz.com/db/KO6LVM" class="glow-button">QRZ</a>
-                <a href="https://app.worldradioleague.com/profile/KO6LVM" class="glow-button">WRL</a>
+                <a href="#contact" class="glow-button animate__animated animate__fadeInUp">Contact Me</a>
+                <a href="https://qrz.com/db/KO6LVM" class="glow-button animate__animated animate__fadeInUp">QRZ</a>
+                <a href="https://app.worldradioleague.com/profile/KO6LVM" class="glow-button animate__animated animate__fadeInUp">WRL</a>
             </div>
             <div class="landing-page-footer-text">
                 <p>San Francisco Skyline, 2024 (Wikimedia)</p>
@@ -304,13 +363,77 @@
                     <div class="qsl-indiv">
                         <h2>Digital</h2>
                         <p>ARRL LoTW, World Radio League</p>
+                        <p class="preferred-tag">NO WRL or eQSL</p>
                     </div>
                     <div class="qsl-indiv">
                         <h2>Physical</h2>
                         <p>Physical QSL cards are not accepted at this time.</p>
+                        <p class="quote-bar">Due to cost and logistics</p>
                     </div>
                 </div>
-                <p>Contacts are processed at the first of every month.</p>
+                <p class="preferred-tag">PLEASE LOG QTH AS GIVEN QTH; REMOTE OPS COMMON</p>
+                <p style="margin-top: 10px;">Contacts are processed at the first of every month.</p>
+            </div>
+        </div>
+        <div class="radios-master-container">
+            <div class="radios-inner-container">
+                <h1>Radios</h1>
+                <div class="each-radio-container">
+                    <div class="generic-wrapper-no-class">
+                        <p class="quote-bar">MAIN VHF/UHF MOBILE</p>
+                        <h2>Icom IC-2730</h2>
+                        <p class="inner-margin">50W Mobile</p>
+                    </div>
+                    <img src="icom-logo.png" style="height: 50px;">
+                </div>
+                <div class="each-radio-container">
+                    <div class="generic-wrapper-no-class">
+                        <p class="quote-bar">MAIN VHF/UHF HT</p>
+                        <h2>Baofeng 5RM</h2>
+                        <p class="inner-margin">10W HT</p>
+                    </div>
+                    <img src="baofeng-logo.png" style="height: 50px;">
+                </div>
+                <div class="each-radio-container">
+                    <div class="generic-wrapper-no-class">
+                        <p class="quote-bar">GMRS HT</p>
+                        <h2>Baofeng UV-5G Pro</h2>
+                        <p class="inner-margin">5W GMRS HT</p>
+                    </div>
+                    <img src="baofeng-logo.png" style="height: 50px;">
+                </div>
+            </div>
+        </div>
+        <div class="radios-master-container">
+            <div class="radios-inner-container">
+                <h1>Remote Stations</h1>
+                <div class="each-radio-container">
+                    <div class="generic-wrapper-no-class">
+                        <p class="quote-bar">REMOTEHAMRADIO<br>YOUTH NETWORK</p>
+                        <h2>W7/W7OSU</h2>
+                        <p class="inner-margin">100W HF REMOTE</p>
+                    </div>
+                    <img src="rhr-logo.png" style="height: 50px;">
+                </div>
+            </div>
+        </div>
+        <div class="radios-master-container">
+            <div class="radios-inner-container">
+                <h1>Antennas</h1>
+                <div class="each-radio-container">
+                    <div class="generic-wrapper-no-class">
+                        <p class="quote-bar">BASE ANTENNA</p>
+                        <h2>Signal Staff OSJ</h2>
+                        <p class="inner-margin">6ft 2m/70cm OSJ</p>
+                    </div>
+                </div>
+                <div class="each-radio-container">
+                    <div class="generic-wrapper-no-class">
+                        <p class="quote-bar">MOBILE ANTENNA</p>
+                        <h2>Diamond MR77</h2>
+                        <p class="inner-margin">2m/70cm Magmount</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="contact-me-master-container" id="contact">
@@ -323,8 +446,11 @@
                         <p class="preferred-tag">PREFERRED</p>
                     </div>
                 </div>
-                <p class="left-indent">General: ryan@KO6LVM.org</p>
-                <p class="left-indent">Edu-Related: edu@KO6LVM.org</p>
+                <p class="left-indent">General: ryan/@KO6LVM.org</p>
+                <p class="left-indent">Edu-Related: edu/@KO6LVM.org</p>
+                <div class="generic-wrapper-no-class" style="margin-left: 25px; padding: 5px 0px 5px 0px;">
+                        <p class="quote-bar">Remove /<br>Due to email scraping</p>
+                </div>
                 <p class="quote-bar">Discord</p>
                 <p class="left-indent">@groundpoint8</p>
             </div>
